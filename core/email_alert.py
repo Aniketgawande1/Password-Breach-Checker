@@ -1,3 +1,11 @@
+import os
+import smtplib
+import configparser
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+from getpass import getpass
+
+
 def load_email_config():
     if all(k in os.environ for k in ["SMTP_SERVER", "SMTP_PORT", "SENDER_EMAIL", "SENDER_PASSWORD"]):
         return {
@@ -88,3 +96,6 @@ def setup_email_config():
 
     print(f"✅ Email configuration saved to {config_path}")
     print("💡 For Gmail, use an App Password: https://myaccount.google.com/apppasswords")
+
+def is_valid_email(email):
+    return re.match(r"[^@]+@[^@]+\.[^@]+", email) is not None
