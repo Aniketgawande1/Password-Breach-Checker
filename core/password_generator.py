@@ -1,3 +1,5 @@
+import random
+import string  # ✅ Required for string.ascii_lowercase, string.digits, etc.
 
 def generate_password(length=16, include_symbols=True, include_numbers=True, include_lowercase=True, include_uppercase=True):
     chars = ""

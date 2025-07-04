@@ -13,3 +13,4 @@ def analyze_password_strength(password):
         'warning': feedback['warning'],
         'suggestions': feedback['suggestions']
     }
+
